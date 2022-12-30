@@ -108,8 +108,12 @@
 			const welcome = "Welcome to 30 Days Of React";
 			const title = "Getting Started React";
 			const subtitle = "JavaScript Library";
-			const authorFirstName = "Denis";
-			const authorLastName = "Ouma";
+			const author = {
+				firstName: "Denis",
+				lastName: "Ouma",
+			};
+			const lists = ["React", "Ruby", "javascript", "HTML", "CSS"];
+
 			const date = "Oct 1, 2020";
 
 			const header = (
@@ -120,7 +124,7 @@
 						<h3>{subtitle}</h3>
 						<p>
 							{" "}
-							Instructor: {authorFirstName} {authorLastName}
+							Instructor: {author.firstName} {author.lastName}
 						</p>
 						<small>Date: {date}</small>
 					</div>
@@ -139,9 +143,9 @@
 							:
 						</p>
 						<ul>
-							<li>HTML</li>
-							<li>CSS</li>
-							<li> JavaScript</li>
+							{lists.map((list) => (
+								<li key={list}>{list}</li>
+							))}
 						</ul>
 					</div>
 				</main>
